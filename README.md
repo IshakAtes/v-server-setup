@@ -225,9 +225,7 @@ Example content:
 </html>  
 ```
 #### Save and exit the nano editor:
-Press Ctrl + O to save the file.
-Press Enter to confirm the filename.
-Press Ctrl + X to exit.
+#### Press Ctrl + O to save the file. Press Enter to confirm the filename. Press Ctrl + X to exit.
 
 
 
@@ -261,8 +259,7 @@ After making changes to the configuration or HTML files, restart the Nginx servi
 sudo service nginx restart  
 ```
 #### Check the status of the Nginx service to verify when it was last restarted:
-The output will show the service's current state and the timestamp of the last update or restart.
-systemctl status nginx.service
+#### The output will show the service's current state and the timestamp of the last update or restart. `systemctl status nginx.service`
 
 
 
