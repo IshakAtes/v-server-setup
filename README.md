@@ -273,3 +273,20 @@ Now we can see our alternative HTML page by entering our IP address followed by 
 ```bash
 http://ip-address:8081/
 ```
+
+
+
+## Conclusion
+### Congratulations! 🎉 You have successfully set up your virtual server, configured SSH keys for secure access, disabled password authentication and installed and customized a web server with Nginx.
+
+### By following this walkthrough, you’ve learned:
+
+- How to create and use SSH keys for secure authentication.
+- How to configure and manage the Nginx web server.
+- How to serve custom web pages from your server.
+
+#### Your server is now ready to be expanded further, whether for hosting websites, deploying applications, or exploring advanced configurations.
+
+#### If you encounter any issues or want to share feedback, feel free to reach out or contribute improvements to this guide.
+
+#### Happy coding! 🚀
