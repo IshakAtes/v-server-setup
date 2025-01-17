@@ -1,8 +1,67 @@
-# v-server-setup
-Walkthrough: Setting Up a Server with SSH and Nginx
+# v-server-setup  
+Walkthrough: Setting Up a Server with SSH and Nginx  
 
-This guide walks you through setting up a virtual server, configuring SSH keys, disabling password authentication, and installing a web server (Nginx).
+This guide walks you through setting up a virtual server, configuring SSH keys, disabling password authentication, and installing a web server (Nginx).  
 
+---
+
+## Table of Contents  
+
+1. **Introduction**  
+   - Overview of the guide  
+
+2. **Step 1: Generate an SSH Key**  
+   - Create a secure SSH key  
+
+3. **Step 2: Specify the Key's Path**  
+   - Define where the key will be stored  
+
+4. **Step 3: View the Keys**  
+   - Verify existing keys  
+
+5. **Step 4: Connect to the Server**  
+   - Establish an initial SSH connection  
+
+6. **Step 5: Create a New Key Pair**  
+   - Generate a dedicated SSH key for the server  
+
+7. **Step 6: Copy the Key to the Server**  
+   - Transfer the public key to the server  
+
+8. **Step 7: Test the Connection with the New Key**  
+   - Verify the connection with the new key  
+
+9. **Step 8: Disable Password Authentication**  
+   - Secure the server by disabling password login  
+
+10. **Step 9: Restart the SSH Service**  
+    - Apply the changes and restart SSH  
+
+11. **Step 10: Verify the Setup**  
+    - Test the updated SSH configuration  
+
+12. **Step 11: Update the System**  
+    - Update the server’s packages  
+
+13. **Step 12: Install Nginx**  
+    - Install the Nginx web server  
+
+14. **Step 13: Check the Nginx Status**  
+    - Verify that Nginx is running  
+
+15. **Step 14: Create an Alternative HTML Page**  
+    - Set up a custom HTML page  
+
+16. **Step 15: Configure Nginx**  
+    - Create and configure a new Nginx site  
+
+17. **Step 16: Restart Nginx**  
+    - Restart Nginx to apply changes  
+
+18. **Step 17: Test the Alternative Page**  
+    - View the custom page in your browser  
+
+---
 
 
 Step 1: Generate an SSH Key
