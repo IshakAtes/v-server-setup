@@ -1,6 +1,6 @@
 # v-server-setup  
 Guide:  
-[Download the PDF guide](https://github.com/IshakAtes/v-server-setup/blob/main/Git%20%2B%20VServer%20Checkliste.pdf)
+[Download the PDF checkliste](https://github.com/IshakAtes/v-server-setup/blob/main/Git%20%2B%20VServer%20Checkliste.pdf)
 
 
 Walkthrough: Setting Up a Server with SSH and Nginx  
@@ -11,62 +11,64 @@ This guide walks you through setting up a virtual server, configuring SSH keys, 
 
 ## Table of Contents  
 
-0. **Introduction**  
+0. [**Introduction**](#v-server-setup)
    - Overview of the guide  
 
-1. **Step 1: Generate an SSH Key**  
+1. [**Step 1: Generate an SSH Key**](#step-1-generate-an-ssh-key)
    - Create a secure SSH key  
 
-2. **Step 2: Specify the Key's Path**  
+2. [**Step 2: Specify the Key's Path**](#step-2-specify-the-keys-path)  
    - Define where the key will be stored  
 
-3. **Step 3: View the Keys**  
+3. [**Step 3: View the Keys**](#step-3-view-the-keys)  
    - Verify existing keys  
 
-4. **Step 4: Connect to the Server**  
+4. [**Step 4: Connect to the Server**](#step-4-connect-to-the-server)  
    - Establish an initial SSH connection  
 
-5. **Step 5: Create a New Key Pair**  
+5. [**Step 5: Create a New Key Pair**](#step-5-create-a-new-key-pair)  
    - Generate a dedicated SSH key for the server  
 
-6. **Step 6: Copy the Key to the Server**  
+6. [**Step 6: Copy the Key to the Server**](#step-6-copy-the-key-to-the-server)
    - Transfer the public key to the server  
 
-7. **Step 7: Test the Connection with the New Key**  
+7. [**Step 7: Test the Connection with the New Key**](#step-7-test-the-connection-with-the-new-key)
    - Verify the connection with the new key  
 
-8. **Step 8: Disable Password Authentication**  
+8. [**Step 8: Disable Password Authentication**](#step-8-disable-password-authentication)
    - Secure the server by disabling password login  
 
-9. **Step 9: Restart the SSH Service**  
+9. [**Step 9: Restart the SSH Service**](#step-9-restart-the-ssh-service)
     - Apply the changes and restart SSH  
 
-10. **Step 10: Verify the Setup**  
+10. [**Step 10: Verify the Setup**](#step-10-verify-the-setup)
     - Test the updated SSH configuration  
 
-11. **Step 11: Update the System**  
+11. [**Step 11: Update the System**](#step-11-update-the-system)
     - Update the server’s packages  
 
-12. **Step 12: Install Nginx**  
+12. [**Step 12: Install Nginx**](#step-12-install-nginx)
     - Install the Nginx web server  
 
-13. **Step 13: Check the Nginx Status**  
+13. [**Step 13: Check the Nginx Status**](#step-13-check-the-nginx-status)
     - Verify that Nginx is running  
 
-14. **Step 14: Create an Alternative HTML Page**  
+14. [**Step 14: Create an Alternative HTML Page**](#step-14-create-an-alternative-html-page)
     - Set up a custom HTML page  
 
-15. **Step 15: Configure Nginx**  
+15. [**Step 15: Configure Nginx**](#step-15-configure-nginx)
     - Create and configure a new Nginx site  
 
-16. **Step 16: Restart Nginx**  
+16. [**Step 16: Restart Nginx**](#step-16-restart-nginx)
     - Restart Nginx to apply changes  
 
-17. **Step 17: Test the Alternative Page**  
+17. [**Step 17: Test the Alternative Page**](#step-17-test-the-alternative-page)
     - View the custom page in your browser  
 
 ---
 
+
+## Setup SSH
 
 ## Step 1: Generate an SSH Key
 
@@ -81,7 +83,7 @@ ssh-keygen -t ed25519
 
 During key creation, specify the path where the key should be stored, for example:
 ```bash
-C:/Users/ishak/.ssh/da/demo_ed25519
+C:/Users/user-directory/.ssh/da/demo_ed25519
 ```
 
 
@@ -92,7 +94,7 @@ List your existing keys using this command:
 ```bash
 ls ~/.ssh/da/  
 ```
-#### Note: The `~` symbol represents your home directory, e.g., `C:/Users/ishak` .
+> [!NOTE]: The `~` symbol represents your home directory, e.g., `C:/Users/user-directory` .
 
 
 
@@ -108,7 +110,7 @@ ssh username@ip-address
 
 Generate a new SSH key pair for the server:
 ```bash
-ssh-keygen -t ed25519 -f C:/Users/ishak/.ssh/demo-server -C "demo-server key"  
+ssh-keygen -t ed25519 -f C:/Users/user-directory/.ssh/demo-server -C "demo-server key"  
 ```
 
 
@@ -117,7 +119,7 @@ ssh-keygen -t ed25519 -f C:/Users/ishak/.ssh/demo-server -C "demo-server key"
 
 Copy the public key to your server:
 ```bash
-type C:\Users\ishak\.ssh\demo-server.pub | ssh username@ip-address "cat >> .ssh/authorized_keys"  
+type C:\Users\user-directory\.ssh\demo-server.pub | ssh username@ip-address "cat >> .ssh/authorized_keys"  
 ```
 
 
@@ -126,7 +128,7 @@ type C:\Users\ishak\.ssh\demo-server.pub | ssh username@ip-address "cat >> .ssh/
 
 Connect to the server using the new SSH key:
 ```bash
-ssh -i C:/Users/ishak/.ssh/demo-server username@ip-address  
+ssh -i C:/Users/user-directory/.ssh/demo-server username@ip-address  
 ```
 
 
@@ -178,6 +180,9 @@ sudo apt update
 
 
 
+
+## Setup Nginx
+
 ## Step 12: Install Nginx
 
 Install the Nginx web server:
@@ -193,7 +198,7 @@ Verify that Nginx is running:
 ```bash
 systemctl status nginx.service  
 ```
-#### If we now enter our IP address `http://49.13.207.228/` in the browser, we will be greeted by the Nginx default HTML page.
+#### If we now enter our IP address `http://<ip_address>/` in the browser, we will be greeted by the Nginx default HTML page.
 
 
 
@@ -215,7 +220,7 @@ sudo nano /var/www/alternatives/alternate-index.html
 ```
 
 Example content:
-```bash
+```html
 <!doctype html>
 <html>  
   <head>
@@ -241,7 +246,7 @@ sudo nano /etc/nginx/sites-enabled/alternatives
 ```
 
 Example configuration:
-```bash
+```nginx
 server {  
     listen 8081;  
     root /var/www/alternatives;  
