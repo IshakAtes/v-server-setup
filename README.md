@@ -1,6 +1,6 @@
 # v-server-setup  
 Guide:  
-[Download the PDF checkliste](https://github.com/IshakAtes/v-server-setup/blob/main/Git%20%2B%20VServer%20Checkliste.pdf)
+[Download the PDF Checklist](https://github.com/IshakAtes/v-server-setup/blob/main/Git%20%2B%20VServer%20Checkliste.pdf)
 
 
 Walkthrough: Setting Up a Server with SSH and Nginx  
